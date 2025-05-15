@@ -5,7 +5,7 @@ tres turnos: mañana, tarde y noche. El programa debe calcular el consumo total 
 generar el promedio semanal correspondiente."""
 
 for edificio in range(1, 5):  # 4 edificios
-    print(f"\nEDIFICIO {edificio}")
+    print(f"\nEdificio {edificio}")
     total_consumo = 0  
 
     for dia in range(1, 8):  
