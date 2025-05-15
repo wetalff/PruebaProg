@@ -9,18 +9,18 @@ producto y mostrar un resumen por stand, por día, y un total general de la feri
 total_feria = 0  
 
 for dia in range(1, 4):  # 3 días
-    print(f"\nDÍA {dia}")
+    print(f"\nDía {dia}")
     total_dia = 0  # Ventas por día
 
     for stand in range(1, 5):  # 4 stands por día
-        print(f"\n  STAND {stand}")
+        print(f"\nStand {stand}")
         total_stand = 0  # Contador de ventas por stand
 
         for producto in range(1, 4):  # 3 productos por stand
-            venta = float(input(f"    Producto {producto} - Monto de venta: $"))
+            venta = float(input(f"Producto {producto} - Monto de venta: $"))
             total_stand += venta  
 
-        print(f"  Total del Stand {stand}: ${total_stand:.2f}")
+        print(f"Total del Stand {stand}: ${total_stand:.2f}")
         total_dia += total_stand  
 
     print(f"\nTotal del Día {dia}: ${total_dia:.2f}")
