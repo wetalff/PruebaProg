@@ -22,9 +22,7 @@ for seccion in range(Secciones):
            
 print(f"La asistencias totales de los 6 estudiantes de cada una de las 3 secciones en una semana es de {Total_semana} asistencias")
             
-                
-            
-
+                 
 
 
         
