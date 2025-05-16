@@ -16,10 +16,6 @@ for edificio in range(1, 5):  # 4 edificios
                     consumo = float(input(f"    Consumo en {turno}: "))
                     if consumo < 0:
                         print("El consumo no puede ser negativo. Intente de nuevo.")
-                    else:
-                        break
-                except ValueError:
-                    print("Entrada inválida. Ingrese un número válido.")
             total_consumo += consumo  
 
     promedio = total_consumo / 7  # Promedio diario
