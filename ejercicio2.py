@@ -7,28 +7,43 @@ ocupadas y libres por laboratorio."""
 
 ocupadas_lab1 = 0
 libres_lab1 = 0
-
 ocupadas_lab2 = 0
 libres_lab2 = 0
 
 print("Laboratorio 1")
 for fila in range(1, 6):  # 5 filas
     for compu in range(1, 5):  # 4 computadoras por fila
-        estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
-        if estado == 1:
-            ocupadas_lab1 += 1
-        elif estado == 0: 
-            libres_lab1 += 1
+        while True:
+            try:
+                estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
+                if estado == 1:
+                    ocupadas_lab1 += 1
+                    break
+                elif estado == 0:
+                    libres_lab1 += 1
+                    break
+                else:
+                    print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
+            except ValueError:
+                print("Entrada inválida. Debe ingresar un número entero (1 o 0).")
 
-print("\nLaboratorio 2") # Salto de linea: \n
+print("\nLaboratorio 2")
 for fila in range(1, 6):
     for compu in range(1, 5):
-        estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
-        if estado == 1:
-            ocupadas_lab2 += 1
-        elif estado == 0:
-            libres_lab2 += 1
+        while True:
+            try:
+                estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
+                if estado == 1:
+                    ocupadas_lab2 += 1
+                    break
+                elif estado == 0:
+                    libres_lab2 += 1
+                    break
+                else:
+                    print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
+            except ValueError:
+                print("Entrada inválida. Debe ingresar un número entero (1 o 0).")
 
-print("\nResumen de uso de computadoras:") 
+print("\nResumen de uso de computadoras:")
 print(f"Laboratorio 1 - Ocupadas: {ocupadas_lab1}, Libres: {libres_lab1}")
 print(f"Laboratorio 2 - Ocupadas: {ocupadas_lab2}, Libres: {libres_lab2}")
