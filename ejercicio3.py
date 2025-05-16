@@ -22,10 +22,6 @@ for dia in range(1, 4):  # 3 días
                     venta = float(input(f"Producto {producto} - Monto de venta: $"))
                     if venta < 0:
                         print("El monto no puede ser negativo. Intente de nuevo.")
-                    else:
-                        break
-                except ValueError:
-                    print("Entrada inválida. Ingrese un número válido.")
             total_stand += venta  
 
         print(f"  Total del Stand {stand}: ${total_stand:.2f}")
