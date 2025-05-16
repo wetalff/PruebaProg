@@ -24,8 +24,6 @@ for fila in range(1, 6):  # 5 filas
                     break
                 else:
                     print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
-            except ValueError:
-                print("Entrada inválida. Debe ingresar un número entero (1 o 0).")
 
 print("\nLaboratorio 2")
 for fila in range(1, 6):
@@ -41,8 +39,6 @@ for fila in range(1, 6):
                     break
                 else:
                     print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
-            except ValueError:
-                print("Entrada inválida. Debe ingresar un número entero (1 o 0).")
 
 print("\nResumen de uso de computadoras:")
 print(f"Laboratorio 1 - Ocupadas: {ocupadas_lab1}, Libres: {libres_lab1}")
