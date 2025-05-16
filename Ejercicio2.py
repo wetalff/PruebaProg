@@ -24,6 +24,8 @@ for lab in range(Laboratorios): #Primer bucle "for".
                 Estado_libre += 1
             elif Estado == 2:  #Exactamente lo mismo que en el anterior solo que ahora con las computadoras ocupadas.
                 Estado_ocupado += 1
+            else:
+                print("Ingrese un valor valido")
     print("-"*133)
     print(f"El resumen total de computadoras libres en el laboratorio numero {lab + 1} es de {Estado_libre} computadoras y el numero de ocupadas es de {Estado_ocupado} computadoras")
     print("-"*133)
