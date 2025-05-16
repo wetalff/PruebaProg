@@ -11,18 +11,21 @@ for edificio in range(1, 5):  # 4 edificios
     for dia in range(1, 8):  # 7 días
         print(f"  Día {dia}")
         for turno in ["mañana", "tarde", "noche"]:  # 3 turnos por día
-            while True:
-                try:
-                    consumo = float(input(f"    Consumo en {turno}: "))
-                    if consumo < 0:
-                        print("    El consumo no puede ser negativo. Intente de nuevo.")
+            consumo_valido = False
+            while not consumo_valido:
+                consumo_input = input(f"    Consumo en {turno}: ")
+                if consumo_input.replace('.', '', 1).isdigit():
+                    consumo = float(consumo_input)
+                    if consumo >= 0:
+                        total_consumo += consumo
+                        consumo_valido = True
                     else:
-                        break
-                except ValueError:
-                    print("    Entrada inválida. Ingrese un número válido.")
-            total_consumo += consumo
+                        print("El consumo no puede ser negativo. Intente de nuevo.")
+                else:
+                    print("Entrada inválida. Ingrese un número positivo.")
 
     promedio = total_consumo / 7  # Promedio diario
 
     print(f"\nTotal semanal del Edificio {edificio}: {total_consumo:.2f} kw")
     print(f"Promedio diario: {promedio:.2f} kw")
+
