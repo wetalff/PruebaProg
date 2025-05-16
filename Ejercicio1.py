@@ -11,6 +11,7 @@ print("-"*100) #Añadiendo un separador para que se lea mas facil.
 print("A continuacion te pedire las asistencias de los 6 estudiantes de 3 secciones en los dias de clases de una semana")
 for seccion in range(Secciones): #Añado el primer bucle "for" en secciones.
     Asistencias = 0 
+    No_asistencias = 0
     for dia in range(Dias): #Segundo bucle "for" en dias.
         print("-"*100)
         print(f"Te preguntare la asistencia de 6 estudiantes de la seccion {seccion+1} en el dia {dia+1}")
@@ -19,6 +20,10 @@ for seccion in range(Secciones): #Añado el primer bucle "for" en secciones.
             asistencia = int(input(f"Asistio a clases el estudiante {estudiante+1} en el dia {dia+1}? (Si = 1 /No = 2): "))
             if asistencia == 1: #Uso if para que haga las operaciones siguientes solo si el valor de "asistencia" es "1".
                 Asistencias += 1 #Si se cumple el if entonces ira sumando uno al contador de "Asistencias" por cada "1" en "asistencia", cualquier otro valor sera tomado como inasistencia.
+            elif asistencia == 2:
+                No_asistencias += 1
+            else:
+                print("Ingrese un valor valido")      #Si se ingresa cualquier otro valor que no sea los indicados lo marcara como error.      
     Total_semana += Asistencias #Suma todas las asistencias en total
     print("-"*100)
     print(f"El total de asistencias por la seccion {seccion+1} es de {Asistencias} Asistencias") #Como esta en el bucle de "seccion" contabilizara las asistencias por sección y las proporcionara"
