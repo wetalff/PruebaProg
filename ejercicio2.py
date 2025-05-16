@@ -11,34 +11,30 @@ ocupadas_lab2 = 0
 libres_lab2 = 0
 
 print("Laboratorio 1")
-for fila in range(1, 6):  # 5 filas
-    for compu in range(1, 5):  # 4 computadoras por fila
-        while True:
-            try:
-                estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
-                if estado == 1:
-                    ocupadas_lab1 += 1
-                    break
-                elif estado == 0:
-                    libres_lab1 += 1
-                    break
-                else:
-                    print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
+for fila in range(1, 6):
+    for compu in range(1, 5):
+        estado = input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): ")
+        while estado != "1" and estado != "0":
+            print("Entrada inválida. Ingrese 1 (ocupada) o 0 (libre).")
+            estado = input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): ")
+
+        if estado == "1":
+            ocupadas_lab1 += 1
+        else:
+            libres_lab1 += 1
 
 print("\nLaboratorio 2")
 for fila in range(1, 6):
     for compu in range(1, 5):
-        while True:
-            try:
-                estado = int(input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): "))
-                if estado == 1:
-                    ocupadas_lab2 += 1
-                    break
-                elif estado == 0:
-                    libres_lab2 += 1
-                    break
-                else:
-                    print("Entrada inválida. Por favor, ingrese 1 (ocupada) o 0 (libre).")
+        estado = input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): ")
+        while estado != "1" and estado != "0":
+            print("Entrada inválida. Ingrese 1 (ocupada) o 0 (libre).")
+            estado = input(f"Fila {fila}, Computadora {compu} (1=Ocupada, 0=Libre): ")
+
+        if estado == "1":
+            ocupadas_lab2 += 1
+        else:
+            libres_lab2 += 1
 
 print("\nResumen de uso de computadoras:")
 print(f"Laboratorio 1 - Ocupadas: {ocupadas_lab1}, Libres: {libres_lab1}")
