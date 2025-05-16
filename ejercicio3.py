@@ -14,15 +14,21 @@ for dia in range(1, 4):  # 3 días
 
     for stand in range(1, 5):  # 4 stands por día
         print(f"\n  STAND {stand}")
-        total_stand = 0  # Contador de ventas por stand
+        total_stand = 0  # Ventas por stand
 
         for producto in range(1, 4):  # 3 productos por stand
-            while True:
-                try:
-                    venta = float(input(f"Producto {producto} - Monto de venta: $"))
-                    if venta < 0:
+            venta_valida = False
+            while not venta_valida:
+                entrada = input(f"    Producto {producto} - Monto de venta: $")
+                if entrada.replace('.', '', 1).isdigit():
+                    venta = float(entrada)
+                    if venta >= 0:
+                        total_stand += venta
+                        venta_valida = True
+                    else:
                         print("El monto no puede ser negativo. Intente de nuevo.")
-            total_stand += venta  
+                else:
+                    print("Entrada inválida. Ingrese un número válido.")
 
         print(f"  Total del Stand {stand}: ${total_stand:.2f}")
         total_dia += total_stand  
