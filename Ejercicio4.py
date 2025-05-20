@@ -27,7 +27,7 @@ for edificio in edificios:
                         continue
                     total_consumo += consumo  # Vamos sumando cada consumo
                     break
-                except ValueError:
+                except
                     print(" Entrada no válida. Por favor ingrese un número.")
 
     # Después de 7 días, mostramos el total y promedio
