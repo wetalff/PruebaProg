@@ -26,7 +26,7 @@ for dia in range(1, 4):
                         print("No puedes ingresar una venta negativa.")
                     else:
                         break
-                except ValueError:
+                except:
                     print("Por favor, escribe un número válido.")
 
             total_stand += venta
